@@ -1,0 +1,18 @@
+{
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "semi": 2,
+    "quotes": [2, "single"],
+    "comma-dangle": 0,
+    "no-process-exit": 0,
+    "func-names": 2,
+    "space-before-blocks": 2,
+    "brace-style": [2, "1tbs"],
+    "space-after-keywords": 2,
+    "space-before-function-parentheses": [2, "never"],
+    "space-after-function-name": [2, "never"],
+    "no-spaced-func": 2
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "globstar",
+  "version": "1.0.0",
+  "description": "Run programs with glob/globstar support, especially on Windows within npm scripts.",
+  "keywords": [
+    "run",
+    "execute",
+    "glob",
+    "globbing",
+    "windows",
+    "platform independent",
+    "windows",
+    "npm",
+    "scripts",
+    "cli"
+  ],
+  "bin": {
+    "globstar": "globstar.js"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/schnittstabil/globstar",
+  "author": {
+    "name": "Michael Mayer",
+    "email": "michael@schnittstabil.de"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schnittstabil/globstar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/schnittstabil/globstar/issues"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run -s lint"
+    }
+  },
+  "scripts": {
+    "test": "mocha",
+    "travis": "npm run cover && istanbul check-coverage && npm run lint && npm run upload-coveralls",
+    "cover": "npm run clean-cover && istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
+    "upload-coveralls": "cat coverage/lcov.info | coveralls",
+    "lint": "npm run -s lint-js && npm run -s lint-ec",
+    "lint-js": "node globstar.js -n --ignore \"coverage/**\" -- eslint \"**/*.js\"",
+    "lint-ec": "node globstar.js -n --ignore \"coverage/**\" -- editorconfig-tools check \"**/*.js\"",
+    "clean-cover": "rimraf coverage"
+  },
+  "dependencies": {
+    "glob": "^5.0.2",
+    "npmlog": "^1.2.0",
+    "object-assign": "^2.0.0",
+    "onetime": "^1.0.0",
+    "yargs": "^3.5.4"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.2",
+    "editorconfig-tools": "^0.1.1",
+    "eslint": "^0.16.2",
+    "ghooks": "^0.2.5",
+    "istanbul": "^0.3.7",
+    "mocha": "^2.2.1",
+    "mocha-lcov-reporter": "0.0.2",
+    "mock-spawn": "^0.2.4",
+    "mockery": "^1.4.0",
+    "rimraf": "^2.3.2"
+  }
+}
