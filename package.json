@@ -50,7 +50,7 @@
     "npmlog": "^1.2.0",
     "object-assign": "^2.0.0",
     "onetime": "^1.0.0",
-    "yargs": "^3.5.4"
+    "yargs": "^15.0.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
